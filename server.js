@@ -5,13 +5,11 @@ import { ConnectDb } from "./DB/db.js";
 import { RegisterCompany } from "./controllers/register.controller.js";
 import { CompanyLogin } from "./controllers/login.controller.js";
 import { GetAllCategoryListing } from "./contents/Listing.api.js";
-import { AddCompanyDetails } from "./contents/AddComp.content.js";
-// import { InsertingCategory } from "./contents/Listing.contents.js";
-// import { AddingBannerContent } from "./contents/Banner.contents.js";
+import { AddCompanyDetails } from "./db-contents/AddComp.content.js";
+import { InsertingCategory } from "./db-contents/Listing.contents.js";
 import { GetAllCompanyAddDetails } from "./contents/AddComp.api.js";
 import { GetBanner } from "./contents/Banner.api.js";
-
-// AddCompanyDetails()
+// InsertingCategory()
 dotenv.config()
 const app = express() ; 
 

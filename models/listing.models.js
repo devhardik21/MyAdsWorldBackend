@@ -10,6 +10,10 @@ const ListingCategorySchema = new Schema(
             type : String,
             required : false
         }],
+        CategoryUrl : {
+            type : String,
+            required : true
+        },
         searches : {
             type : Number,
             required: false
