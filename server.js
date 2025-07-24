@@ -8,9 +8,10 @@ import { GetAllCategoryListing } from "./contents/Listing.api.js";
 // import { AddCompanyDetails } from "./contents/AddComp.content.js";
 import { GetAllCompanyAddDetails } from "./contents/AddComp.api.js";
 import { GetBanner } from "./contents/Banner.api.js";
-import { AddingBannerContent } from "./contents/Banner.contents.js";
+
+
 //import { InsertingCategory } from "./contents/Listing.contents.js";
-AddingBannerContent() ; 
+// AddingBannerContent() ; 
 // InsertingCategory() ;
 dotenv.config()
 const app = express() ; 
@@ -43,8 +44,6 @@ app.get("/api_app/get-banners",GetBanner);
 app.post('/api_app/register',RegisterCompany);
 app.post('/api_app/login',CompanyLogin) ;
 
-app.post('/api/register',RegisterCompany);
-app.post('/api/login',CompanyLogin) ;
 
 app.listen(PORT,()=>{
     console.log("Our backend is successfully running on the port",PORT);   
