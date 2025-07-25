@@ -5,20 +5,24 @@ import { ConnectDb } from "./DB/db.js";
 import { RegisterCompany } from "./controllers/register.controller.js";
 import { CompanyLogin } from "./controllers/login.controller.js";
 import { GetAllCategoryListing } from "./contents/Listing.api.js";
-import { AddCompanyDetails } from "./db-contents/AddComp.content.js";
-import { InsertingCategory } from "./db-contents/Listing.contents.js";
 import { GetAllCompanyAddDetails } from "./contents/AddComp.api.js";
 import { GetBanner } from "./contents/Banner.api.js";
-// InsertingCategory()
+import { GetCategoryCount } from "./admin/NoofCategory.admin.js";
+import { GetSubCategoryCount } from "./admin/NoofSubCategory.admin.js";
+
+
 dotenv.config()
 const app = express() ; 
 
 // adding middlewares
 app.use(cors()) ; 
+
 // converts json to objects
 app.use(express.json()) ; 
 
+// connecting to the database
 ConnectDb();
+
 const PORT = process.env.PORT ; 
 console.log("checking if the dotenv file is working properly or not",PORT);
 
@@ -40,6 +44,12 @@ app.get("/api_app/get-additional-details",GetAllCompanyAddDetails) ;
 app.get("/api_app/get-banners",GetBanner);
 app.post('/api_app/register',RegisterCompany);
 app.post('/api_app/login',CompanyLogin) ;
+
+
+// admin panel Api's
+
+app.get("/api_admin/get-category-count",GetCategoryCount);
+app.get("/api_admin/get-subcategory-count",GetSubCategoryCount);
 
 
 app.listen(PORT,()=>{
