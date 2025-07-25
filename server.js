@@ -6,6 +6,7 @@ import { RegisterCompany } from "./controllers/register.controller.js";
 import { CompanyLogin } from "./controllers/login.controller.js";
 import { GetAllCategoryListing } from "./contents/Listing.api.js";
 import { GetAllCompanyAddDetails } from "./contents/AddComp.api.js";
+import { GetSubCategories } from "./contents/SubCategory.api.js";
 import { GetBanner } from "./contents/Banner.api.js";
 import { GetCategoryCount } from "./admin/NoofCategory.admin.js";
 import { GetSubCategoryCount } from "./admin/NoofSubCategory.admin.js";
@@ -40,6 +41,7 @@ app.post('/api/login',CompanyLogin) ;
 
 //app api
 app.get("/api_app/get-category",GetAllCategoryListing) ; 
+app.get("/api_app/get-subcategory",GetSubCategories) ; 
 app.get("/api_app/get-additional-details",GetAllCompanyAddDetails) ; 
 app.get("/api_app/get-banners",GetBanner);
 app.post('/api_app/register',RegisterCompany);
